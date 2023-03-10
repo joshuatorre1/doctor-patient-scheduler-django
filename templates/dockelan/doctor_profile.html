@@ -1,0 +1,82 @@
+{% extends 'dockelan/sidebar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Doc Kelan</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/doctorprofile.css' %}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="top-block">
+                <img class="image" src="{% static 'images/cover_photo.png' %}">
+            </div>
+            <div class="bottom-block">
+                <div class="left-container">
+                    <div class="block-container" id="calendar-block">
+                        {# TODO: PUT CODES HERE FOR THE CALENDAR #}
+                        <div class="calendar">{{ cal|safe }}</div>
+                    </div>
+                </div>
+                <div class="center-container">
+                    <label id="here">Here are the available schedules on your selected date.</label>
+                    {# Schedule #}
+                    {# TODO: MAKE THE DESIGN #}
+
+                    <form class="form-class" method="POST" id="schedule-form">
+                        {% csrf_token %}
+
+                        <select name="schedule" id="date" required>
+                            <option value="none" selected disabled hidden>Select date</option>
+                            {% for date in dates %}
+                                <option value="{{ date }}"> {{ date }} </option>
+                            {% endfor %}
+                        </select>
+                        <input id="search-button" id="search-appointment" type="submit" name="chooseDate" value="Search">
+                    </form>
+                    <div class="table-container">
+                        <table>
+                        {% for date, timeIntervals in availableSchedules.items %}
+                                {% for id, intervals in timeIntervals.items %}
+                                            {% for time in intervals %}
+                                                <tr>
+                                                    <td>
+                                                        <a class="link" href="{% url 'appointmentRequest' doctor.id date time.0 time.1 %}"> {{ date }} {{ time.0 }} {{ time.1 }}</a>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+
+                                {% endfor %}
+                        {% endfor %}
+                    </table>
+                    </div>
+
+                </div>
+                <div class="right-container">
+                    <div class="block-container" id="profile-container">
+                        <div class="profile-photo">
+                            {# TODO: THIS IS FOR THE PROFILE PICTURE #}
+                            <img class="profile-image" src="{% static profilePic  %}">
+                        </div>
+                        <div class="major-details" id="name">
+                            <div id="name">Dr. {{ doctor }}</div>
+                            <div id="specialty">{{ doctor.specialty }}</div>
+                        </div>
+                        <div class="minor-details">
+                            <div id="hospital">Residence: {{ doctor.hospital }}</div>
+                            <div id="insurance">Insurance: {{ doctor.insurance_company }}</div>
+                            <div id="description">Description: {{ doctor.description }}</div>
+                        </div>
+                        <div class="price">
+                            <label>Php {{ doctor.consultation_fee }}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    {% endblock %}
+</html>

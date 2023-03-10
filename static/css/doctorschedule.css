@@ -1,0 +1,170 @@
+/* === CSS VARIABLES === */
+:root {
+    /* === Colors === */
+    --dark-blue: #193B68;
+    --light-blue: #1479FF;
+    --light-grey: #E5E5E5;
+    --background: #E8F2FF;
+
+    /* === Fonts === */
+    --main-font: Mont;
+    --title-font-size: 44px;
+    --subtitle-font-size: 30px;
+    --subsubtitle-font-size: 20px;
+    --sentence-font-size: 12px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    font-family: Mont;
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: 200px;
+    width: 87%;
+    height: 100%;
+    /*background-color: black;*/
+}
+
+.container {
+    position: relative;
+    padding: 20px;
+    width: 380px;
+    min-height: 400px;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 0px 9px 26px rgba(20, 121, 255, 0.25);
+}
+
+.set-schedule-label {
+    color: var(--dark-blue);
+    font-size: var(--subtitle-font-size);
+    font-weight: 800;
+    position: relative;
+    margin: 10px;
+}
+
+.form-container {
+    position: relative;
+    margin: 20px 10px;
+}
+
+.textfield {
+    /* === All contents of the textfield (input and label) === */
+    position: relative;
+    height: 1.75rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.textfield input {
+    /* === Input tags of the text fields === */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 1rem;
+    font-family: var(--main-font);
+    font-size: var(--sentence-font-size);
+    font-weight: 800;
+    border: 1px solid var(--light-grey);
+    border-radius: 0.75rem;
+    outline: none;
+    background: none;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.prompt {
+    /* === Username and Password Prompt === */
+    position: absolute;
+    top: 0.5rem;
+    left: .75rem;
+    padding: 0 5px 0;
+    background-color: white;
+    border-radius: 2rem;
+    color: var(--light-grey);
+    font-family: var(--main-font);
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    transition: 0.3s;
+    z-index: 2;
+}
+
+.errorlist {
+    /* === Error Messages Prompt === */
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    color: indianred;
+}
+
+.form-buttons {
+    position: relative;
+    top: 2rem;
+    height: 2rem;
+    margin-right: 20px;
+    padding: 0 2rem;
+    outline: none;
+    border: none;
+    font-family: var(--main-font);
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    border-radius: .75rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#set-button {
+    color: whitesmoke;
+    background-color: var(--light-blue);
+}
+
+#cancel-button {
+    color: var(--light-blue);
+    background-color: whitesmoke;
+}
+
+/* === ANIMATIONS === */
+.textfield input:focus + .prompt {
+    /* === Event of the prompt texts when text fields are focused === */
+    top: -.5rem;
+    left: .8rem;
+    color: var(--dark-blue);
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    z-index: 10;
+}
+
+
+.textfield input:not([value=""]):valid +.prompt {
+    /* === Prompt texts remains at the top === */
+    top: -.5rem;
+    left: .8rem;
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    z-index: 2;
+}
+
+.textfield input:hover {
+    border: 1px solid var(--light-blue);
+    transition: all 0.3s ease;
+}
+.textfield input:focus{
+    /* === Animation for text fields === */
+    border: 1px solid var(--dark-blue);
+    transition: all 0.3s ease;
+}
+
+.form-buttons:hover {
+    opacity: 70;
+    box-shadow: 0px 9px 26px rgba(20, 121, 255, 0.25);
+}

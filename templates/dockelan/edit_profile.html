@@ -1,0 +1,30 @@
+{% extends 'dockelan/sidebar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block content %}
+        <head>
+            <meta charset="UTF-8">
+            <title>Doc Kelan</title>
+            <link rel="stylesheet" type="text/css" href="{% static 'css/edit_profile.css' %}">
+        </head>
+        <body>
+        <div class="container">
+            <form method="POST" enctype="multipart/form-data">
+                <h1 class="header">Edit Profile</h1>
+                <div class="user-details">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="textfield">
+                            <p class="prompt">{{ field.label }}</p>
+                            <p class="field">{{ field }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <input class="save_button" id="button" type="submit" name="updateProfile" value="Update Profile">
+            </form>
+        </div>
+        </body>
+    {% endblock %}
+</html>

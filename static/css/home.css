@@ -1,0 +1,529 @@
+/* === CSS VARIABLES === */
+:root {
+    /* === Colors === */
+    --dark-blue: #193B68;
+    --light-blue: #1479FF;
+    --light-grey: #E5E5E5;
+    --background: #E8F2FF;
+
+    /* === Fonts === */
+    --main-font: Mont;
+    --title-font-size: 44px;
+    --subtitle-font-size: 30px;
+    --subsubtitle-font-size: 20px;
+    --calendar-font-size: 16px;
+    --sentence-font-size: 12px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    font-family: Mont;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wrapper {
+    display: inline-block;
+    position: relative;
+    margin-left: 200px;
+    width: 87%;
+    height: 100%;
+    /*background-color: black;*/
+}
+
+.future-container-container {
+    overflow-y: hidden;
+    height: 22rem;
+}
+
+.upcoming-appointments {
+    position: relative;
+    width: 25%;
+    height: 100%;
+    padding: 0 5%;
+    float: left;
+}
+.text-container {
+    margin: 10% 5%;
+}
+#welcome-container {
+    margin-top: 100px;
+}
+#here-container {
+    width: 100%;
+}
+
+.welcome {
+    font-size: var(--subsubtitle-font-size);
+    font-weight: 800;
+    margin-top: 10%;
+}
+
+.here {
+    color: var(--dark-blue);
+    opacity: 50%;
+    font-size: var(--subsubtitle-font-size) - 10px;
+    font-weight: 800;
+}
+
+.link {
+    display: block;
+    width: 80%;
+    height: 25px;
+    margin: 10px 10px 10px 0;
+    padding: 10px 20px 20px 20px;
+    border: 2px solid var(--dark-blue);
+    border-radius: 10px;
+    color: var(--dark-blue);
+    opacity: 50%;
+    outline: none;
+    font-size: 13px; /* Custom font size */
+    font-weight: 600;
+    text-decoration: none;
+    transition: .3s;
+}
+
+
+#button {
+    position: absolute;
+    top: 80%;
+    left: 30%;
+    width: 40%;
+    height: 45px;
+    background-color: var(--light-blue);
+    outline: none;
+    border: none;
+    color: white;
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    border-radius: .75rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#schedule-button {
+    position: absolute;
+    top: 90%;
+    left: 30%;
+    width: 40%;
+    height: 45px;
+    background-color: white;
+    outline: none;
+    border: none;
+    color: var(--light-blue);
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    border-radius: .75rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.blocks-container {
+    width: 65%;
+    height: 100%;
+    float: left;
+    /*background-color: black;*/
+
+}
+
+.top-blocks {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    /*background-color: blue;*/
+}
+
+.bottom-block {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    /*background-color: yellow;*/
+}
+
+/* === CALENDAR CONTAINER === */
+
+
+#calendar-block {
+    position: relative;
+    top: 15%;
+    margin-right: 5%;
+    width: 250px;
+    height: 250px;
+    float: left;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 0 9px 26px rgba(20, 121, 255, 0.25);
+    padding-top: 2rem;
+    padding-left: 1.25rem;
+    box-sizing: border-box;
+}
+
+/* === STATUS CONTAINER === */
+#status-block {
+    position: relative;
+    top: 15%;
+    width: 500px;
+    height: 210px;
+    padding: 20px;
+    float: left;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 0 9px 26px rgba(20, 121, 255, 0.25);
+}
+
+.empty {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+}
+.empty-icon {
+    height: 100px;
+}
+
+#empty-status {
+    margin: 10px 0 20px;
+}
+
+#empty-search {
+    margin: auto;
+    padding-top: 50px;
+    display: block;
+}
+
+.empty-label {
+    font-size: var(--sentence-font-size);
+}
+
+
+.appointment-status-label {
+    color: var(--dark-blue);
+    font-size: var(--subsubtitle-font-size);
+    font-weight: 800;
+    margin: 15px 10px;
+}
+
+.table-container {
+    width: 100%;
+    /*padding-left: 10px;*/
+    overflow: hidden;
+    font-size: var(--sentence-font-size);
+    border-radius: 10px;
+    /*margin: auto;*/
+    /*background-color: blue;*/
+}
+
+#table-container-patient {
+    height: 150px;
+}
+
+#table-container-doctor {
+    height: 180px;
+}
+
+.for-table {
+    /*margin: auto;*/
+    font-weight: 800;
+
+}
+
+.status-container {
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+#status-container-patient {
+    height: 10px;
+}
+
+#status-container-doctor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.legends {
+    height: 30px;
+    border-radius: 1rem;
+    margin-top: 15px;
+    padding: 0 20px;
+    /*background-color: blue;*/
+    /*box-shadow: 0 9px 15px rgba(20, 121, 255, 0.25);*/
+}
+
+.legends span {
+    margin-right: 8px;
+    font-size: 10px;
+}
+
+#status-container-doctor {
+    height: 80px;
+    background-color: white;
+    box-shadow: 0 9px 15px rgba(20, 121, 255, 0.25);
+}
+
+.status-button {
+    width: 20px;
+    height: 20px;
+}
+
+#accept-button {
+    fill: var(--light-blue);
+}
+
+#decline-button {
+    fill: indianred;
+}
+
+#reschedule-button {
+    fill: black;
+}
+
+/* === SEARCH CONTAINER === */
+#appointment-block {
+    position: absolute;
+    top: -30px;
+    width: 790px;
+    height: 400px;
+    padding: 20px;
+    float: left;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 0 9px 26px rgba(20, 121, 255, 0.25);
+
+
+
+}
+
+.search-label {
+    color: var(--dark-blue);
+    font-size: var(--subsubtitle-font-size);
+    font-weight: 800;
+    margin: 15px 10px;
+}
+
+.search-and-filters {
+    display: inline-block;
+}
+
+.search-bar {
+    width: 300px;
+    height: 15px;
+    background-color: var(--light-grey);
+    margin: 10px 5px 10px 10px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-weight: 600;
+}
+
+.search-button {
+    width: 100px;
+    height: 35px;
+    /*margin: 10px 5px 10px 10px;*/
+    /*padding: 10px 10px;*/
+    outline: none;
+    border: none;
+    background-color: var(--light-blue);
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#id_lowerBound {
+    width: 130px;
+    height: 15px;
+    background-color: var(--light-grey);
+    margin: 10px 5px 10px 10px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-weight: 600;
+}
+
+#id_upperBound {
+    width: 130px;
+    height: 15px;
+    background-color: var(--light-grey);
+    margin: 10px 5px 10px 10px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-weight: 600;
+}
+.search-and-filters select {
+    width: 100px;
+    height: 35px;
+    /*margin: 10px 5px 10px 10px;*/
+    /*padding: 10px 10px;*/
+    text-align: center;
+    outline: none;
+    background-color: white;
+    border: 2px solid black;
+    border-color: var(--light-blue);
+    color: var(--light-blue);
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+
+    text-align-last: center;
+}
+
+.search-and-filters label {
+    display: none;
+}
+.doctorlist-patientlist-container {
+    position: relative;
+    top: 10px;
+    width: 100%;
+    height: 250px;
+    padding: 0 5px;
+    border-radius: 10px;
+    /*background-color: black;*/
+    overflow-y: hidden;
+}
+.doctor-patient-container {
+    position: relative;
+    left: 30px;
+    width: 90%;
+    height: 80px;
+    margin: 15px 0;
+    background-color: white;
+    box-shadow: 0 9px 26px rgba(20, 121, 255, 0.25);
+    border-radius: 1rem;
+    transition: all 0.3s ease;;
+}
+
+#doctor-name {
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    font-size: var(--subsubtitle-font-size) - 10px;
+    font-weight: 800;
+    color: var(--dark-blue);
+}
+
+#patient-name {
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    font-size: var(--subsubtitle-font-size) - 10px;
+    font-weight: 800;
+    color: var(--dark-blue);
+}
+
+#doctor-specialty {
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+#patient-cellphone {
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+#doctor-hospital {
+    position: absolute;
+    top: 45px;
+    left: 100px;
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+#patient-email {
+    position: absolute;
+    top: 45px;
+    left: 100px;
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+/* NEW CODES */
+.calendar {
+    /*font-family: var(--main-font);*/
+    font-size: var(--calendar-font-size);
+    color: var(--dark-blue);
+}
+
+.calendarButtons {
+    position: relative;
+    /*display: flex;*/
+    border-color: transparent;
+    background-color: transparent;
+    color: var(--dark-blue);
+}
+
+.month {
+    font-weight: 600;
+    text-align: center;
+}
+
+.month td {
+    font-size: 15px;
+}
+
+#invisible {
+    color: white;
+}
+
+/*td {*/
+/*    text-align: left;*/
+/*}*/
+/* === ANIMATIONS === */
+.search-button:hover, #button:hover, #schedule-button:hover {
+    cursor: pointer;
+    opacity: 70%;
+    box-shadow: 0 9px 26px rgba(20, 121, 255, 0.25);
+}
+
+.future-container-container:hover {
+    overflow-y: scroll;
+}
+
+.doctor-patient-container:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.doctor-patient-info:hover {
+    cursor: pointer;
+}
+
+.doctorlist-patientlist-container:hover {
+    overflow-y: scroll;
+}
+
+.table-container:hover {
+    overflow-y: scroll;
+}
+
+.link:hover {
+    background-color: var(--dark-blue);
+    cursor: pointer;
+    opacity: 50%;
+    color: whitesmoke;
+}

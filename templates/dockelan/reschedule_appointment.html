@@ -1,0 +1,40 @@
+{% extends 'dockelan/sidebar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/appointmentrequest.css' %}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="special-container">
+                <label id="confirm-label">Reschedule appointment</label>
+                <strong class="confirm-details">Patient: {{ appointment.patient }}</strong>
+                <strong class="confirm-details">Date: {{ appointment.date }}</strong>
+                <strong class="confirm-details">Time: {{ appointment.start_time }} - {{ appointment.end_time }}</strong>
+
+                <form method="POST">
+                    {% csrf_token %}
+{#                    <label>Choose new schedule</label>#}
+                    <select name="schedule" id="schedule" required>
+                        <option value="none" selected disabled hidden>Select date</option>
+                        {% for date, timeIntervals in availableSchedules.items %}
+                            <optgroup label="{{ date }}">
+                                {% for time in timeIntervals %}
+                                    <option value="{{ date }}-{{ time.0 }}-{{ time.1 }}">{{ time.0 }} - {{ time.1 }}</option>
+                                {% endfor %}
+                            </optgroup>
+                        {% endfor %}
+                    </select>
+                    <input id="special-confirm-button" type="submit" name="rescheduleAppointment" value="Reschedule Appointment">
+                </form>
+            </div>
+        </div>
+    </body>
+    {% endblock %}
+</html>
+

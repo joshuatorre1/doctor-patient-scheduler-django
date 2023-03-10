@@ -1,0 +1,95 @@
+/* === CSS VARIABLES === */
+:root {
+    /* === Colors === */
+    --dark-blue: #193B68;
+    --light-blue: #1479FF;
+    --light-grey: #E5E5E5;
+
+    /* === Fonts === */
+    --main-font: Mont;
+    --title-font-size: 44px;
+    --subtitle-font-size: 30px;
+    --sentence-font-size: 12px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    font-family: Mont;
+    height: 100vh;
+}
+
+/*.container {*/
+/*    display: flex;*/
+/*    position: relative;*/
+/*}*/
+
+.bar {
+    position: fixed;
+    width: 200px ;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /*box-shadow: 0px 9px 26px rgba(20, 121, 255, 0.25)*/
+}
+
+.title {
+    position: absolute;
+    top: 30px;
+    font-size: var(--subtitle-font-size);
+    font-weight: 800;
+    color: var(--light-blue);
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    background-color: var(--light-grey);
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.label {
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.button-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--light-blue);
+    transition: all 0.3s ease;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* === ANIMATIONS === */
+.active, .button:hover {
+    cursor: pointer;
+    background-color: var(--light-blue);
+    box-shadow: 0px 15px 24px rgba(20, 121, 255, 0.25);
+    transform: scale(1.2);
+    /*fill: white;*/
+}
+
+.active .button-icon {
+    fill: white;
+}
+.button:hover .button-icon{
+    cursor: pointer;
+    fill: white;
+}

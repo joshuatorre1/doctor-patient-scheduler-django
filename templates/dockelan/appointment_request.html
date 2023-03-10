@@ -1,0 +1,32 @@
+{% extends 'dockelan/sidebar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Doc Kelan</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/appointmentrequest.css' %}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="container">
+                <label id="confirm-label">Confirm appointment</label>
+                <strong class="confirm-details">Doctor: {{ doctor.first_name }} {{ doctor.middle_name }} {{ doctor.last_name }}</strong>
+                <strong class="confirm-details">Date: {{ schedDetails.0 }}</strong>
+                <strong class="confirm-details">Time: {{ schedDetails.1 }} - {{ schedDetails.2 }}</strong>
+
+                <form method="POST">
+                    {% csrf_token %}
+{#                    <a href="{% url 'home' user.username %}">#}
+                        <input class="confirm-button" type="submit" name="confirmAppointment" value="Confirm Appointment">
+{#                    </a>#}
+                </form>
+            </div>
+
+        </div>
+
+    </body>
+    {% endblock %}
+</html>

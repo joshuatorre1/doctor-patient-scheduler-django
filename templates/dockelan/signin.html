@@ -1,0 +1,36 @@
+{% extends 'dockelan/topbar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block content %}
+        <head>
+            <meta charset="UTF-8">
+            <title>Doc Kelan</title>
+            <link rel="stylesheet" type="text/css" href="{% static 'css/sign.css' %}">
+        </head>
+        <body>
+            <div class="container">
+                <form method="POST" action="#" class="form" >
+                    {%  csrf_token %}
+                    <h1 class="title">Sign in.</h1>
+                    <div class="textfield">
+                        <input class="field" type="text" placeholder=" " id="username" name="username" required>
+                        <label class="prompt" for="username">Username</label>
+                    </div>
+                    <div class="textfield">
+                        <input class="field" type="password" placeholder=" " id="password" name="password" required>
+                        <label class="prompt" for="password">Password</label>
+                    </div>
+                    {%  for message in messages  %}
+                    <p class = message id = "messages"> {{message}} </p>
+                    {% endfor %}
+                    <input type="submit" class="button" value="Sign In">
+                    <h2 class="text">Don't have an account yet?</h2>
+                    <a class="link" href="http://127.0.0.1:8000/signup">Sign Up</a>
+                </form>
+            </div>
+            <div class="background"></div>
+           </body>
+    {% endblock %}
+</html>

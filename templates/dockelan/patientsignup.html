@@ -1,0 +1,116 @@
+{% extends 'dockelan/topbar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block content %}
+        <head>
+            <meta charset="UTF-8">
+            <title>Doc Kelan</title>
+            <link rel="stylesheet" type="text/css" href="{% static 'css/patientsignup.css' %}">
+        </head>
+        <body>
+            <div class="container">
+                <form method="POST" action="">
+                    {%  csrf_token %}
+                    <h1 class="title">Patient sign up.</h1>
+                    <h1 class="subtitle">Basic Information</h1>
+                    <div class="user-details">
+                        <div class="textfield">
+                            <input class="field" type="text" placeholder=" " id="last_name" name="last_name" required>
+                            <label class="prompt" for="last_name">Last Name</label>
+                        </div>
+                        <div class="textfield">
+                            <input class="field" type="text" placeholder=" " id="first_name" name="first_name" required>
+                            <label class="prompt" for="first_name">First Name</label>
+                        </div>
+                        <div class="textfield">
+                            <input class="field" type="text" placeholder=" " id="middle_name" name="middle_name" required>
+                            <label class="prompt" for="middle_name">Middle Name</label>
+                        </div>
+                        <div class="textfield">
+                            <select class="select" id="name_suffix" name="name_suffix" onclick="this.setAttribute('value', this.value);" value="">
+                                <option value="">---</option>
+                                <option value="Jr.">Jr.</option>
+                                <option value="II">II</option>
+                                <option value="III">III</option>
+                                <option value="IV">IV</option>
+                                <option value="V">V</option>
+                                <option value="VI">VI</option>
+                                <option value="VII">VII</option>
+                                <option value="VIII">VIII</option>
+                                <option value="IX">IX</option>
+                                <option value="X">X</option>
+                            </select>
+                            <label class="prompt" for="name_suffix">Suffix</label>
+                        </div>
+                        <div class="textfield">
+                            <input class="field" type="text" placeholder=" " id="birthday" name="birthday" onclick="(this.type='date')" required>
+                            <label class="prompt" for="birthday">Date of Birth</label>
+                        </div>
+                        <div class="textfield">
+                            <select id="sex" name="sex" onclick="this.setAttribute('value', this.value);" value="" required>
+                                <option value="" selected>---</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Others">Others</option>
+                            </select>
+                            <label class="prompt" for="sex">Sex</label>
+                        </div>
+                        <div class="textfield">
+                            <input class="field" type="number" placeholder=" " id="weight" name="weight" required>
+                            <label class="prompt" for="weight">Weight in kg</label>
+                        </div>
+                        <div class="textfield">
+                            <input class="field" type="number" placeholder=" " id="height" name="height" required>
+                            <label class="prompt" for="height">Height in cm</label>
+                        </div>
+                    </div>
+                    <h1 class="subtitle">Contact Information</h1>
+                    <div class="user-details">
+                        <div class="textfield">
+                            <input class="field" type="number" placeholder=" " id="cellphone_number" name="cellphone_number" required>
+                            <label class="prompt" for="cellphone_number">Phone Number</label>
+                        </div>
+                        <div class="textfield">
+                            <input class="field" type="number" placeholder=" " id="telephone_number" name="telephone_number">
+                            <label class="prompt" for="telephone_number">Landline Number</label>
+                        </div>
+                        <div class="textfield">
+                            <input class="field" type="email" placeholder=" " id="email" name="email" required>
+                            <label class="prompt" for="email">Email Address</label>
+                        </div>
+                    </div>
+                    <h1 class="subtitle">Account Details</h1>
+                    <div class="user-details">
+                        <div class="textfield">
+                            <input class="field" type="text" placeholder=" " id="username" name="username" required>
+                            <label class="prompt" for="username">Username</label>
+                        </div>
+                        <div class="textfield">
+                            <input class="field" type="password" placeholder=" " id="password" name="password" required>
+                            <label class="prompt" for="password">Password</label>
+                        </div>
+                        <div class="textfield">
+                            <input class="field" type="password" placeholder=" " id="retype_password" name="retype_password" required>
+                            <label class="prompt" for="retype_password">Re-type Password</label>
+                        </div>
+                    </div>
+
+                    {%  for error in form.errors.values %}
+                        <p class = "errorlist" id="errorlist"> {{error}} </p>
+                    {% endfor %}
+                    {%  for message in messages %}
+                        <ul>
+                            <li class = "errorlist" id="errorlist"> {{message}} </li>
+                        </ul>
+                    {% endfor %}
+                    <input class="button" id="button" type="submit" name="Create User" value="Sign Up" >
+                    <h2 class="text">Already have an account?</h2>
+                    <a class="link" href="http://127.0.0.1:8000/signin">Sign In</a>
+                </form>
+            </div>
+        </body>
+    {% endblock %}
+
+</html>

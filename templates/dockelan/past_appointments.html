@@ -1,0 +1,47 @@
+{% extends 'dockelan/sidebar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/pastappointment.css' %}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="past-appointments-list">
+                <div class="here-container">
+                    <label class="here">Here are your past appointments</label>
+                </div>
+
+                <div class="past-appointment-container">
+                    {% for appointment in pastAppointments %}
+                        {% if userType == "Patient" %}
+                            <tr>
+                                <td>
+                                    <a class="link" href="{% url 'pastAppointment' appointment.id %}">
+                                        <div>
+                                            Dr. {{ appointment.doctor }}
+                                        </div>
+                                        {{ appointment.date }} {{ appointment.start_time }}<br>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td>
+                                    <a class="link" href="{% url 'pastAppointment' appointment.id %}">
+                                        Patient {{ appointment.patient }} {{ appointment.date }} {{ appointment.start_time }}<br>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+    {% endblock %}
+</html>

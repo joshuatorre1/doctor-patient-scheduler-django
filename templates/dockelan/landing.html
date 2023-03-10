@@ -1,0 +1,88 @@
+{% extends 'dockelan/topbar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block content %}
+        <head>
+            <meta charset="UTF-8">
+            <title>Doc Kelan</title>
+            <link id="landingStyle" rel="stylesheet" type="text/css" href="{% static 'css/landing.css' %}">
+            <script>
+                function layoutHandler() {
+                    const styleLink = document.getElementById("landingStyle");
+                    if(window.innerWidth < 1100) {
+                        styleLink.setAttribute("href", "{% static 'css/landing-resize.css' %}");
+                    }
+                    else {
+                        styleLink.setAttribute("href", "{% static 'css/landing.css' %}");
+                    }
+                }
+                window.onresize = layoutHandler;
+                layoutHandler();
+            </script>
+        </head>
+        <body>
+                <!-- FREE LICENSE <a href='https://pngtree.com/so/reservation'>reservation png from pngtree.com</a> -->
+                <a href="signin">
+                    <button class="get-started">Get Started</button>
+                </a>
+                <div class="div-1">
+                    <div class="intro">
+                        <label class="intro-text">Want to get checked up but don't know when?</label>
+                        <div>
+                            <label class="intro-text">Hmm...</label>
+                            <label class="intro-text" id="dockelan-text">Doc Kelan?</label>
+                        </div>
+                        <div class="subdiv-1">
+                            <label class="intro-subtext">Health is wealth. That is why giving time for your health is a must.
+                            With Doc Kelan, you can easily make appointments with the doctor of your choice, cancel the appointment anytime,
+                            and monitor the status of your appointment in real-time.</label>
+                        </div>
+                    </div>
+                    <img class="intro-image" src="{% static 'images/intro_image.png' %}">
+
+                </div>
+                <div class="div-2">
+                    <img class="doctor-image" src="{% static 'images/doctor_dashboard.png' %}">
+                    <div class="doctor-intro-container">
+                        <label class="doctor-intro" id="hello">Hello, Doctor.</label>
+                        <label class="doctor-intro" id="this-is-your-dashboard">This is your dashboard.</label>
+                        <label class="doctor-intro">Here you can see today's appointments, track your schedules with the calendar,
+                        monitor appointment requests, and view your past and future appointments.</label>
+                    </div>
+                </div>
+                <div class="div-3">
+                    <div class="patient-intro-container">
+                        <label class="patient-intro" id="hello">Hello, Patient.</label>
+                        <label class="patient-intro" id="this-is-your-dashboard">This is your dashboard.</label>
+                        <label class="patient-intro">Here you can schedule appointments, see upcoming appointments, track your appointments with the calendar,
+                        monitor appointment status, and view your past appointments.</label>
+                    </div>
+                    <img class="patient-image" src="{% static 'images/patient_dashboard.png' %}">
+                </div>
+                <div class="div-4">
+                    <div class="inside-container">
+                        <img class="schedule-image" src="{% static 'images/schedule_page.png' %}">
+                        <div class="schedule-intro-container">
+                            <label class="schedule-intro" id="schedule-intro-title">Find the best time that fits your schedule.</label>
+                            <label class="schedule-intro"></label>
+                        </div>
+                    </div>
+                    <div class="inside-container">
+                        <img class="schedule-image" src="{% static 'images/appointment_page.png' %}">
+                        <div class="schedule-intro-container">
+                            <label class="schedule-intro" id="schedule-intro-title">Set your appointment easily.</label>
+                            <label class="schedule-intro"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <label class="copyright">Doc Kelan © 2021</label>
+                </div>
+
+
+
+        </body>
+    {% endblock %}
+</html>

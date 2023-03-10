@@ -1,0 +1,217 @@
+/* === CSS VARIABLES === */
+:root {
+    /* === Colors === */
+    --dark-blue: #193B68;
+    --light-blue: #1479FF;
+    --light-grey: #E5E5E5;
+    --background: #E8F2FF;
+
+    /* === Fonts === */
+    --main-font: Mont;
+    --title-font-size: 44px;
+    --subtitle-font-size: 30px;
+    --subsubtitle-font-size: 20px;
+    --sentence-font-size: 12px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 2000px;
+    font-family: var(--main-font);
+    background-color: #FFF;
+}
+
+.get-started {
+    /* Get Started Button */
+    position: fixed;
+    width: 200px;
+    height: 50px;
+    right: 59px;
+    top: 30px;
+    z-index: 20;
+
+    background-color: var(--light-blue);
+    border: none;
+    box-shadow: 0px 15px 24px rgba(20, 121, 255, 0.25);
+    border-radius: 15px;
+
+    /* Get Started Text */
+
+    font-weight: 600;
+    font-size: var(--sentence-font-size) + 3px;
+    color: white;
+    transition: transform .5s;
+    outline: none;
+}
+
+.div-1 {
+    position: relative;
+    top: 5%;
+    width: 100%;
+    height: 30%;
+    /*background-color: red;*/
+}
+
+.intro {
+    display: block;
+    width: 500px;
+    height: 300px;
+    margin: auto;
+    text-align: center;
+    /*padding: 100px;*/
+    /*background-color: black;*/
+}
+
+.intro-text {
+    font-weight: 800;
+    font-size: var(--subtitle-font-size);
+    color: var(--dark-blue);
+}
+
+#dockelan-text {
+    color: var(--light-blue);
+}
+
+.subdiv-1 {
+    margin-top: 30px;
+}
+
+.intro-subtext {
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.intro-image {
+    display: block;
+    height: 80%;
+    margin: auto;
+}
+
+.div-2 {
+    position: relative;
+    padding-top: 5%;
+    top: 5%;
+    width: 100%;
+    height: 30%;
+    background-color: var(--dark-blue);
+}
+
+
+.doctor-image {
+    display: block;
+    margin: auto;
+    height: 60%;
+    border-radius: 30px;
+    box-shadow: 10px 10px 26px -12px rgba(0,0,0,0.75);
+}
+
+.doctor-intro-container {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.doctor-intro {
+    display: block;
+    font-weight: 600;
+    color: whitesmoke;
+    padding: 10px;
+}
+
+#hello {
+    font-size: var(--title-font-size);
+}
+
+#this-is-your-dashboard {
+    font-size: var(--subtitle-font-size);
+}
+
+.div-3 {
+    position: relative;
+    top: 5%;
+    width: 100%;
+    height: 30%;
+    /*background-color: red;*/
+}
+
+.patient-image {
+    display: block;
+    margin: auto;
+    height: 60%;
+    border-radius: 30px;
+    box-shadow: 10px 10px 26px -12px rgba(0,0,0,0.75);
+}
+
+.patient-intro-container {
+    display: block;
+    margin-left: auto;
+    text-align: center;
+}
+
+.patient-intro {
+    display: block;
+    font-weight: 600;
+    color: var(--dark-blue);
+    padding: 10px;
+}
+
+.div-4 {
+    position: relative;
+    top: 5%;
+    width: 100%;
+    height: 80%;
+    background-color: var(--dark-blue);
+}
+
+.inside-container {
+    display: block;
+    width: 100%;
+    height: 45%;
+    /*background-color: black;*/
+    margin: auto;
+    padding-top: 30px;
+}
+
+.schedule-image {
+    display: block;
+    margin: 0 auto;
+    height: 50%;
+    border-radius: 30px;
+    box-shadow: 10px 10px 26px -12px rgba(0,0,0,0.75);
+}
+
+.schedule-intro {
+    display: block;
+    font-weight: 600;
+    color: whitesmoke;
+    padding: 10px;
+    text-align: center;
+}
+
+#schedule-intro-title {
+    margin-top: 20px;
+    font-size: var(--title-font-size);
+}
+
+.bottom {
+    position: relative;
+    top: 5%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+}
+
+.copyright {
+    position: absolute;
+    top: 90%;
+    font-size: var(--subsubtitle-font-size);
+    color: var(--dark-blue);
+
+}
+/* === ANIMATIONS === */
+.get-started:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}

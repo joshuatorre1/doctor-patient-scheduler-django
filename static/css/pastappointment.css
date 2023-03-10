@@ -1,0 +1,81 @@
+/* === CSS VARIABLES === */
+:root {
+    /* === Colors === */
+    --dark-blue: #193B68;
+    --light-blue: #1479FF;
+    --light-grey: #E5E5E5;
+    --background: #E8F2FF;
+
+    /* === Fonts === */
+    --main-font: Mont;
+    --title-font-size: 44px;
+    --subtitle-font-size: 30px;
+    --subsubtitle-font-size: 20px;
+    --sentence-font-size: 12px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    font-family: Mont;
+    height: 100vh;
+}
+
+.wrapper {
+    display: inline-block;
+    position: relative;
+    margin-left: 200px;
+    width: 87%;
+    height: 100%;
+}
+
+.past-appointments-list {
+    position: relative;
+    width: 25%;
+    height: 100%;
+    padding: 0 5%;
+    float: left;
+    overflow-y: hidden;
+    /*background-color: black;*/
+}
+
+.here {
+    color: var(--dark-blue);
+    opacity: 50%;
+    font-size: var(--subsubtitle-font-size) - 10px;
+    font-weight: 800;
+    margin-top: 10%;
+}
+
+.here-container {
+    margin-top: 100px;
+}
+.link {
+    display: block;
+    width: 80%;
+    height: 25px;
+    margin: 10px 10px 10px 0;
+    padding: 10px 20px 20px 20px;
+    border: 2px solid var(--dark-blue);
+    border-radius: 10px;
+    color: var(--dark-blue);
+    opacity: 50%;
+    outline: none;
+    font-size: 13px; /* Custom font size */
+    font-weight: 600;
+    text-decoration: none;
+    transition: .3s;
+}
+
+/* === ANIMATIONS === */
+.link:hover {
+    background-color: var(--dark-blue);
+    cursor: pointer;
+    opacity: 50%;
+    color: whitesmoke;
+}
+
+.past-appointments-list:hover {
+    overflow-y: scroll;
+}

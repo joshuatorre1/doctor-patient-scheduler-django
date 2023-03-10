@@ -1,0 +1,320 @@
+/* === CSS VARIABLES === */
+:root {
+    /* === Colors === */
+    --dark-blue: #193B68;
+    --light-blue: #1479FF;
+    --light-grey: #E5E5E5;
+    --background: #E8F2FF;
+
+    /* === Fonts === */
+    --main-font: Mont;
+    --title-font-size: 44px;
+    --subtitle-font-size: 30px;
+    --subsubtitle-font-size: 20px;
+    --calendar-font-size: 16px;
+    --sentence-font-size: 12px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    font-family: Mont;
+    height: 100vh;
+}
+
+.wrapper {
+    /*display: inline-block;*/
+    position: relative;
+    margin-left: 200px;
+    width: 87%;
+    height: 100%;
+    overflow-x: hidden;
+    /*background-color: black;*/
+}
+
+.top-block {
+    position: relative;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /*background-color: yellow;*/
+}
+
+.image {
+    /*flex-shrink: 0;*/
+    object-fit: cover;
+    min-width: 100%;
+    max-height: 100%
+}
+
+.bottom-block {
+    display: inline-block;
+    width: 100%;
+    height: 69%;
+    /*background-color: blue;*/
+}
+
+.left-container {
+    position: relative;
+    width: 30%;
+    height: 100%;
+    float: left;
+    /*background-color: red;*/
+}
+
+#calendar-block {
+    position: absolute;
+    /*left: 5%;*/
+    margin: 10% 20% 20% 20%;
+    width: 250px;
+    height: 250px;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 0 9px 26px rgba(20, 121, 255, 0.25);
+    padding-top: 2rem;
+    padding-left: 1.25rem;
+    box-sizing: border-box;
+}
+
+.schedule-button {
+    position: absolute;
+    left: 20%;
+    width: 250px;
+    height: 45px;
+    outline: none;
+    border: none;
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    border-radius: .75rem;
+    transition: .3s;
+    text-align: center;
+    line-height: 50px;
+}
+
+#book-appointment {
+    top: 70%;
+    background-color: var(--light-blue);
+    color: white;
+}
+
+#back {
+    margin-top: 10px;
+    top: 80%;
+    background-color: white;
+    color: var(--light-blue);
+}
+
+.center-container {
+    position: relative;
+    width: 30%;
+    height: 100%;
+    float: left;
+    /*background-color: green;*/
+}
+
+#here {
+    display: block;
+    color: var(--dark-blue);
+    opacity: 50%;
+    font-size: var(--subsubtitle-font-size) - 10px;
+    font-weight: 800;
+    padding: 10%;
+
+}
+
+.form-class {
+    display: block;
+    margin: auto;
+    padding: 0 40px;
+}
+
+.form-class select {
+    width: 200px;
+    height: 35px;
+    /*margin: 10px 5px 10px 10px;*/
+    /*padding: 10px 10px;*/
+    text-align: center;
+    outline: none;
+    background-color: white;
+    border: 2px solid black;
+    border-color: var(--light-blue);
+    color: var(--light-blue);
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+
+    text-align-last: center;
+}
+
+#search-button {
+    width: 100px;
+    height: 35px;
+    outline: none;
+    border: none;
+    background-color: var(--light-blue);
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.table-container {
+    height: 300px;
+    overflow-y: hidden;
+    margin: auto;
+    padding: 0 40px;
+    /*background-color: blue;*/
+}
+
+.link {
+    display: block;
+    width: 80%;
+    height: 10px;
+    margin: 10px;
+    padding: 10px 20px 20px 20px;
+    border: 2px solid var(--dark-blue);
+    border-radius: 10px;
+    color: var(--dark-blue);
+    opacity: 50%;
+    outline: none;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .3s;
+
+}
+
+.right-container {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    float: left;
+    /*background-color: orange;*/
+}
+
+#profile-container {
+    position: relative;
+    top: -30%;
+    left: 70px;
+    padding: 10% 0;
+    width: 500px;
+    height: 500px;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 0 9px 26px rgba(20, 121, 255, 0.25);
+    animation: show 1s linear;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 0 9px 26px rgba(20, 121, 255, 0.25);
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
+.major-details {
+    margin: 5%;
+    text-align: center;
+}
+
+#name {
+    font-size: var(--subsubtitle-font-size);
+    font-weight: 800;
+    color: var(--dark-blue);
+}
+
+#specialty {
+    font-size: var(--sentence-font-size) + 5px;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.minor-details {
+    font-size: var(--sentence-font-size) + 5px;
+    margin: 5%;
+}
+
+#hospital {
+    margin-bottom: 10px;
+}
+
+#insurance {
+    margin-bottom: 10px;
+}
+
+#description {
+    width: 400px;
+    margin-bottom: 10px;
+}
+.price {
+    /*position: absolute;*/
+    top: 80%;
+    text-align: center;
+}
+.price label {
+    font-size: var(--subtitle-font-size);
+    font-weight: 800;
+    color: var(--light-blue);
+}
+
+.calendar {
+    /*font-family: var(--main-font);*/
+    font-size: var(--calendar-font-size);
+    color: var(--dark-blue);
+}
+
+.month {
+    font-weight: 600;
+    text-align: center;
+}
+
+.month td {
+    font-size: 15px;
+}
+
+/* === ANIMATIONS === */
+.schedule-button:hover {
+    cursor: pointer;
+    opacity: 70%;
+    box-shadow: 0 9px 26px rgba(20, 121, 255, 0.25);
+}
+
+#search-button:hover {
+    cursor: pointer;
+    opacity: 70%;
+    box-shadow: 0 9px 26px rgba(20, 121, 255, 0.25);
+}
+
+@keyframes show {
+    from {
+        transform: translateX(500px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.table-container:hover {
+    overflow-y: scroll;
+}
+
+.link:hover {
+    background-color: var(--dark-blue);
+    cursor: pointer;
+    opacity: 50%;
+    color: whitesmoke;
+}

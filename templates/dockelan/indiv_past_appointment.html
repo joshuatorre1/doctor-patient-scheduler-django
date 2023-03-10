@@ -1,0 +1,50 @@
+{% extends 'dockelan/sidebar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Doc Kelan</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/appointmentrequest.css' %}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="container">
+
+                <label id="confirm-label">Appointment Details</label>
+                {% if userType == "Patient" %}
+                <strong class="confirm-details">Date: {{ appointment.date }}</strong>
+                <strong class="confirm-details">Time: {{ appointment.start_time }} - {{ appointment.end_time }}</strong>
+                <strong class="confirm-details">Doctor: {{ appointment.doctor }}</strong>
+                <strong class="confirm-details">Specialty: {{ appointment.doctor.specialty }}</strong>
+                <strong class="confirm-details">Residence: {{ appointment.doctor.hospital }}</strong>
+                <strong class="confirm-details">Insurance: {{ appointment.doctor.insurance_company }}</strong>
+                <strong class="confirm-details">Description: {{ appointment.doctor.description }}</strong>
+                <strong class="confirm-details">Cellphone Number: {{ appointment.doctor.cellphone_number }}</strong>
+                <strong class="confirm-details">Email: {{ appointment.doctor.email }}</strong>
+
+                {% else %}
+                <strong class="confirm-details">Date: {{ appointment.date }}</strong>
+                <strong class="confirm-details">Time: {{ appointment.start_time }} - {{ appointment.end_time }}</strong>
+                <strong class="confirm-details">Patient: {{ appointment.patient }}</strong>
+                <strong class="confirm-details">Birthday: {{ appointment.patient.birthday }}</strong>
+                <strong class="confirm-details">Sex: {{ appointment.patient.sex }}</strong>
+                <strong class="confirm-details">Weight: {{ appointment.patient.weight }} kg</strong>
+                <strong class="confirm-details">Height: {{ appointment.patient.height }} cm</strong>
+                <strong class="confirm-details">Cellphone Number: {{ appointment.patient.cellphone_number }}</strong>
+                <strong class="confirm-details">Email: {{ appointment.patient.email }}</strong>
+                {% endif %}
+                <button class="confirm-button" onclick="goBack()">Back</button>
+
+            </div>
+        </div>
+    </body>
+        <script>
+            function goBack() {
+              window.history.back();
+            }
+        </script>
+    {% endblock %}
+</html>

@@ -1,0 +1,188 @@
+/* === CSS VARIABLES === */
+:root {
+    /* === Colors === */
+    --dark-blue: #193B68;
+    --light-blue: #1479FF;
+    --light-grey: #E5E5E5;
+    --background: #E8F2FF;
+
+    /* === Fonts === */
+    --main-font: Mont;
+    --title-font-size: 44px;
+    --subtitle-font-size: 30px;
+    --subsubtitle-font-size: 20px;
+    --sentence-font-size: 12px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    font-family: Mont;
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: 200px;
+    width: 87%;
+    height: 100%;
+    /*background-color: black;*/
+}
+
+.container {
+    position: relative;
+    padding: 20px;
+    width: 380px;
+    min-height: 310px;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 0px 9px 26px rgba(20, 121, 255, 0.25);
+}
+
+#special-container {
+    position: relative;
+    padding: 20px;
+    width: 380px;
+    min-height: 350px;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 0px 9px 26px rgba(20, 121, 255, 0.25);
+}
+
+#another-special-container{
+    position: relative;
+    padding: 20px;
+    width: 380px;
+    min-height: 400px;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 0px 9px 26px rgba(20, 121, 255, 0.25);
+}
+
+#schedule {
+    width: 348px;
+    height: 35px;
+    margin: 0 15px;
+    /*padding: 10px 10px;*/
+    text-align: center;
+    outline: none;
+    background-color: white;
+    border: 2px solid black;
+    border-color: var(--light-blue);
+    color: var(--light-blue);
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+
+    text-align-last: center;
+}
+
+#special-schedule {
+    width: 150px;
+    height: 35px;
+    margin: 0 15px;
+    /*padding: 10px 10px;*/
+    text-align: center;
+    outline: none;
+    background-color: white;
+    border: 2px solid black;
+    border-color: var(--light-blue);
+    color: var(--light-blue);
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+    display: inline-block;
+    float: left;
+    text-align-last: center;
+}
+
+#confirm-label {
+    display: block;
+    color: var(--dark-blue);
+    font-size: 25px;            /* Custom font size */
+    font-weight: 800;
+    position: relative;
+    margin: 10px;
+}
+
+.confirm-details {
+    display: block;
+    width: 80%;
+    min-height: 10px;
+    border: 2px solid var(--dark-blue);
+    margin: 20px 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: var(--dark-blue);
+    opacity: 50%;
+
+    font-size: 80%;             /* Custom font size */
+
+}
+
+.confirm-button {
+    width: 150px;
+    height: 35px;
+    margin: 5px 15px;
+    border: none;
+    background-color: var(--light-blue);
+    color: whitesmoke;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+#special-confirm-button {
+    width: 170px;
+    height: 35px;
+    margin: 0 13px;
+    border: none;
+    background-color: var(--light-blue);
+    color: whitesmoke;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: .3s;
+    float: left;
+}
+
+#form-container {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cancel-appointment-button {
+    width: 170px;
+    height: 35px;
+    margin: 15px 15px 0;
+    border: none;
+    background-color: white;
+    color: var(--light-blue);
+    font-weight: 600;
+    border-radius: 10px;
+    transition: .3s;
+
+}
+
+/* === ANIMATIONS === */
+.confirm-button:hover, #special-confirm-button:hover {
+    cursor: pointer;
+    opacity: 70%;
+    box-shadow: 0 9px 26px rgba(20, 121, 255, 0.25);
+}
+
+#cancel-appointment-button:hover {
+    cursor: pointer;
+    opacity: 70%;
+    box-shadow: 0 9px 26px rgba(20, 121, 255, 0.25);
+    background-color: red;
+    color: whitesmoke;
+}

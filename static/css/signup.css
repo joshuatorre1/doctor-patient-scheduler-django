@@ -1,0 +1,136 @@
+/* === CSS VARIABLES === */
+:root {
+    /* === Colors === */
+    --dark-blue: #193B68;
+    --light-blue: #1479FF;
+    --light-grey: #E5E5E5;
+
+    /* === Fonts === */
+    --main-font: Mont;
+    --title-font-size: 44px;
+    --subtitle-font-size: 16px;
+    --sentence-font-size: 10px;
+}
+
+/* === CHOOSE === */
+.container {
+    /* === Container === */
+    position: relative;
+    display: flex;
+    margin: auto; /* this aligns the box at the center idk why */
+    top: 10rem;
+    width: 380px;
+    height: 370px;
+    border-radius: 2rem;
+    box-shadow: 0px 9px 26px rgba(20, 121, 255, 0.25);
+
+}
+
+.title {
+    /* === Sign In Label === */
+    font-family: var(--main-font);
+    font-size: var(--title-font-size);
+    color: var(--dark-blue);
+    font-weight: 800;
+    margin: 10% 10%;
+}
+
+.patient {
+    /* === Patient Button === */
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 30%;
+    left: 10%;
+    background: var(--light-blue);
+    /*box-shadow: 0px 9px 24px 10px rgba(20, 121, 255, 0.2);*/
+    border-radius: 20px;
+    transition: transform .5s;
+}
+.patient:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    box-shadow: 0px 9px 24px 10px rgba(20, 121, 255, 0.2);
+}
+
+.patientLabel {
+    /* === Patient Label === */
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    font-family: var(--main-font);
+    font-weight: 800;
+    font-size: var(--subtitle-font-size);
+    color: var(--dark-blue);
+}
+
+.patientLabel2 {
+    /* === Patient Label More Info === */
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    font-family: var(--main-font);
+    font-weight: 600;
+    font-size: var(--sentence-font-size);
+    color: var(--dark-blue);
+}
+
+.doctor {
+    /* === Doctor Button === */
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 65%;
+    left: 10%;
+
+    background: var(--light-blue);
+    /*box-shadow: 0px 9px 24px 10px rgba(20, 121, 255, 0.2);*/
+    border-radius: 20px;
+    transition: .5s;
+}
+
+.doctor:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    box-shadow: 0px 9px 24px 10px rgba(20, 121, 255, 0.2);
+}
+
+.doctorLabel {
+    /* === Doctor Label === */
+    position: absolute;
+    top: 65%;
+    left: 45%;
+    font-family: var(--main-font);
+    font-weight: 800;
+    font-size: var(--subtitle-font-size);
+    color: var(--dark-blue);
+}
+
+.doctorLabel2 {
+    /* === Doctor Label More Info === */
+    position: absolute;
+    top: 75%;
+    left: 45%;
+    font-family: var(--main-font);
+    font-weight: 600;
+    font-size: var(--sentence-font-size);
+    color: var(--dark-blue);
+}
+
+.patientImage {
+    /* === Patient Icon === */
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    top: 10%;
+    left: 13%;
+}
+
+.doctorImage {
+    /* === Doctor Icon === */
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    top: 10%;
+    left: 13%;
+}

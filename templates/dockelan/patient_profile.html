@@ -1,0 +1,40 @@
+{% extends 'dockelan/sidebar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Doc Kelan</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/appointmentrequest.css' %}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="container">
+                <label id="confirm-label">Patient Profile</label>
+                {% if userType == "Doctor" %}
+                <strong class="confirm-details">Patient: {{ patient.first_name }} {{ patient.middle_name.0 }}. {{ patient.last_name }} {{ patient.name_suffix }}</strong>
+                <strong class="confirm-details">Birthday: {{ patient.birthday }}</strong>
+                <strong class="confirm-details">Sex: {{ patient.sex }}</strong>
+                <strong class="confirm-details">Weight: {{ patient.weight }} kg</strong>
+                <strong class="confirm-details">Height: {{ patient.height }} cm</strong>
+                <strong class="confirm-details">Cellphone Number: {{ patient.cellphone_number }}</strong>
+                <strong class="confirm-details">Telephone Number: {{ patient.telephone_number }}</strong>
+                <strong class="confirm-details">Email: {{ patient.email }}</strong>
+
+                {% else %}
+
+                {% endif %}
+                <button class="confirm-button" onclick="goBack()">Back</button>
+
+            </div>
+        </div>
+    </body>
+        <script>
+            function goBack() {
+              window.history.back();
+            }
+        </script>
+    {% endblock %}
+</html>

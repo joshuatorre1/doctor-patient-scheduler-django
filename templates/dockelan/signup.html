@@ -1,0 +1,32 @@
+{% extends 'dockelan/topbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    {% block content %}
+        <head>
+            <meta charset="UTF-8">
+            <title>Doc Kelan</title>
+            <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+        </head>
+        <body>
+            <div class="container">
+                <h1 class="title">Choose.</h1>
+                <a href="patient">
+                    <div class="patient">
+                    <img class="patientImage" src="{% static 'images/patient.png' %}">
+                </div>
+                </a>
+                <h1 class="patientLabel">Patient</h1>
+                <h2 class="patientLabel2">Create a patient account and start setting up your profile to set appointments, find doctors, and more.</h2>
+                <a href="doctor">
+                    <div class="doctor">
+                    <img class="doctorImage" src="{% static 'images/nurse.png' %}">
+                </div>
+                </a>
+                <h1 class="doctorLabel">Doctor</h1>
+                <h2 class="doctorLabel2">Create a doctor account to make your job easier by easily tracking and monitoring your appointments.</h2>
+            </div>
+
+        </body>
+{% endblock %}
+</html>

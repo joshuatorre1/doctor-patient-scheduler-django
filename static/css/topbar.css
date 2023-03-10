@@ -1,0 +1,28 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.bar {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    z-index: 10;
+}
+
+.header1 {
+    /* Doc Kelan */
+    position: fixed;
+    width: 230px;
+    height: 50px;
+    left: 65px;
+    top: 30px;
+    cursor: pointer;
+
+    font-family: "Mont Heavy";
+    font-weight: 800;
+    font-size: 44px;
+
+    color: #1479FF;
+}

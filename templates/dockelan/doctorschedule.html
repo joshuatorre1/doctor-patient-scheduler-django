@@ -1,0 +1,64 @@
+{% extends 'dockelan/sidebar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/doctorschedule.css' %}">
+    </head>
+    <body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="title-container">
+               <label class="set-schedule-label">Set schedule</label>
+            </div>
+            <div class="form-container">
+                <form method="POST">
+                {% csrf_token %}
+                <div class="textfield">
+                    <input class="field" type="text" placeholder=" " id="date" name="date" onclick="(this.type='date')" required>
+                    <label class="prompt" for="date">Date of Availability</label>
+                </div>
+                <div class="textfield">
+                    <input class="field" type="text" placeholder=" " id="start_time" name="start_time" onclick="(this.type='time')" required>
+                    <label class="prompt" for="start_time">Start Time</label>
+                </div>
+                <div class="textfield">
+                    <input class="field" type="text" placeholder=" " id="end_time" name="end_time" onclick="(this.type='time')" required>
+                    <label class="prompt" for="end_time">End Time</label>
+                </div>
+                <div class="textfield">
+                    <input class="field" type="text" placeholder=" " id="break_start_time" name="break_start_time" onclick="(this.type='time')" required>
+                    <label class="prompt" for="break_start_time">Break Start Time</label>
+                </div>
+                <div class="textfield">
+                    <input class="field" type="text" placeholder=" " id="break_end_time" name="break_end_time" onclick="(this.type='time')" required>
+                    <label class="prompt" for="break_end_time">Break End Time</label>
+                </div>
+                <div class="textfield">
+                    <input class="field" type="text" placeholder=" " id="consultation_time" name="consultation_time" required>
+                    <label class="prompt" for="consultation_time">Consultation Time (minutes)</label>
+                </div>
+                {%  for error in form.errors.values %}
+                    <p> {{error}} </p>
+                {% endfor %}
+                <div class="buttons">
+                    <input class="form-buttons" id="set-button" type="submit" name="Set Schedule">
+                    <a href="{% url 'home' doctor.username %}">
+                        <button class="form-buttons" id="cancel-button" type="button">Cancel</button>
+                    </a>
+
+                </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    </body>
+    {% endblock %}
+</html>

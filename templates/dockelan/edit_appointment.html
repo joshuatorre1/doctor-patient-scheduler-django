@@ -1,0 +1,61 @@
+{% extends 'dockelan/sidebar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Doc Kelan</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/appointmentrequest.css' %}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="another-special-container">
+                <label id="confirm-label">Appointment on {{ appointment.date }} {{ appointment.start_time }} - {{ appointment.end_time }}</label>
+                {% if userType == "Patient" %}
+                <strong class="confirm-details">Doctor: {{ appointment.doctor }}</strong>
+                <strong class="confirm-details">Specialty: {{ appointment.doctor.specialty }}</strong>
+                <strong class="confirm-details">Residence: {{ appointment.doctor.hospital }}</strong>
+                <strong class="confirm-details">Insurance: {{ appointment.doctor.insurance }}</strong>
+                <strong class="confirm-details">Description: {{ appointment.doctor.description }}</strong>
+                <strong class="confirm-details">Cellphone Number: {{ appointment.doctor.cellphone_number }}</strong>
+                <strong class="confirm-details">Email: {{ appointment.doctor.email }}</strong>
+                {% else %}
+                <strong class="confirm-details">Patient: {{ appointment.patient }}</strong>
+                <strong class="confirm-details">Birthday: {{ appointment.patient.birthday }}</strong>
+                <strong class="confirm-details">Sex: {{ appointment.patient.sex }}</strong>
+                <strong class="confirm-details">Weight: {{ appointment.patient.weight }} cm</strong>
+                <strong class="confirm-details">Height: {{ appointment.patient.height }} kg</strong>
+                <strong class="confirm-details">Cellphone Number: {{ appointment.patient.cellphone_number }}</strong>
+                <strong class="confirm-details">Email: {{ appointment.patient.email }}</strong>
+                {% endif %}
+
+                <form method="POST">
+                    {% csrf_token %}
+{#                    <label>Choose new schedule</label>#}
+                    <select name="schedule" id="special-schedule" required>
+                        <option value="none" selected disabled hidden>Select date</option>
+                        {% for date, timeIntervals in availableSchedules.items %}
+                            <optgroup label="{{ date }}">
+                                {% for time in timeIntervals %}
+                                    <option value="{{ date }}-{{ time.0 }}-{{ time.1 }}">{{ time.0 }} - {{ time.1 }}</option>
+                                {% endfor %}
+                            </optgroup>
+                        {% endfor %}
+                    </select>
+                    <input id="special-confirm-button" type="submit" name="rescheduleAppointment" value="Reschedule Appointment">
+                </form>
+                <div id="form-container">
+                    <form method="POST">
+                    {% csrf_token %}
+                    <input id="cancel-appointment-button" type="submit" name="cancelAppointment" value="Cancel Appointment">
+                </form>
+                </div>
+
+
+            </div>
+        </div>
+    </body>
+    {% endblock %}
+</html>

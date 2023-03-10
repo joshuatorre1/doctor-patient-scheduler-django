@@ -1,0 +1,80 @@
+{% extends 'dockelan/sidebar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block content %}
+        <head>
+            <meta charset="UTF-8">
+            <title>Doc Kelan</title>
+            <link rel="stylesheet" type="text/css" href="{% static 'css/profile_page.css' %}">
+        </head>
+        <body>
+            <img class="cover_pic" src="{% static "images/cover_photo.png" %}" width="460" height="345">
+            <img class="profile_pic" src="{{ user.picture_file.url }}">
+            {% if userType == "Patient" %}
+                <h1 class="name">{{ user.first_name }} {{ user.middle_name.0 }}. {{ user.last_name }} {{ user.name_suffix }}</h1>
+                <div class="containers">
+                    <div class="container">
+                        <h3 class="header">Basic Information</h3>
+                        <p class="text">First Name: {{ user.first_name }}</p>
+                        <p class="text">Middle Name: {{ user.middle_name }}</p>
+                        <p class="text">Last Name: {{ user.last_name }}</p>
+                        <p class="text">Name Suffix: {{ user.name_suffix }}</p>
+                        <p class="text">Birthday: {{ user.birthday }}</p>
+                        <p class="text">Sex: {{ user.sex }}</p>
+                        <p class="text">Height: {{ user.height }}</p>
+                        <p class="text">Weight: {{ user.weight }}</p>
+                        <a class="edit" href="{%url 'editProfile' user.username%}">Edit details</a>
+                    </div>
+                    <div class="container">
+                        <h3 class="header">Contact Information</h3>
+                        <p class="text">Phone Number: {{ user.cellphone_number }}</p>
+                        <p class="text">Landline Number: {{ user.telephone_number }}</p>
+                        <p class="text">Email Address: {{ user.email }}</p>
+                        <a class="edit" href="{%url 'editProfile' user.username%}">Edit details</a>
+                    </div>
+                    <div class="container">
+                        <h3 class="header">Account Details</h3>
+                        <p class="text">Username: {{ user.username }}</p>
+                        <a class="edit" href="{%url 'editProfile' user.username%}">Edit details</a>
+                    </div>
+                </div>
+            {% else %}
+                <h1 class="name">Dr. {{ user.first_name }} {{ user.middle_name.0 }}. {{ user.last_name }} {{ user.name_suffix }}</h1>
+                <div class="containers">
+                    <div class="container">
+                        <h3 class="header">Basic Information</h3>
+                        <p class="text">First Name: {{ user.first_name }}</p>
+                        <p class="text">Middle Name: {{ user.middle_name }}</p>
+                        <p class="text">Last Name: {{ user.last_name }}</p>
+                        <p class="text">Name Suffix: {{ user.name_suffix }}</p>
+                        <p class="text">Birthday: {{ user.birthday }}</p>
+                        <p class="text">Sex: {{ user.sex }}</p>
+                        <p class="text">Region: {{ user.region }}</p>
+                        <p class="text">Description: {{ user.description }}</p>
+                        <a class="edit" href="{%url 'editProfile' user.username%}">Edit details</a>
+                    </div>
+                    <div class="container">
+                        <h3 class="header">Contact Information</h3>
+                        <p class="text">Phone Number: {{ user.cellphone_number }}</p>
+                        <p class="text">Landline Number: {{ user.telephone_number }}</p>
+                        <p class="text">Email Address: {{ user.email }}</p>
+                        <a class="edit" href="{%url 'editProfile' user.username%}">Edit details</a>
+                    </div>
+                    <div class="container">
+                        <h3 class="header">Other Details</h3>
+                        <p class="text">Specialty: {{ user.specialty }}</p>
+                        <p class="text">Specialty: {{ user.hospital }}</p>
+                        <p class="text">Consultation Fee: {{ user.consultation_fee }}</p>
+                        <p class="text">Insurance Fee: {{ user.consultation_fee }}</p>
+                        <p class="text">License Number: {{ user.license_number }}</p>
+                        <p class="text">Username: {{ user.username }}</p>
+                        <a class="edit" href="{%url 'editProfile' user.username%}">Edit details</a>
+                    </div>
+                </div>
+            {% endif %}
+        </body>
+    {% endblock %}
+</html>
+

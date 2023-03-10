@@ -1,0 +1,229 @@
+/* === CSS VARIABLES === */
+:root {
+    /* === Colors === */
+    --dark-blue: #193B68;
+    --light-blue: #1479FF;
+    --light-grey: #E5E5E5;
+    --background: #F3F8FF;
+
+    /* === Fonts === */
+    --main-font: Mont;
+    --title-font-size: 44px;
+    --subtitle-font-size: 30px;
+    --sentence-font-size: 12px;
+}
+
+body {
+    height: 100vh;
+    font-family: var(--main-font);
+    background-color: var(--background);
+}
+
+textarea {
+    border: 1px solid var(--light-grey);
+    border-radius: 1rem;
+    height: 2rem;
+    width: 200%;
+    font-family: var(--main-font);
+    padding-left: 1rem;
+    box-sizing: border-box;
+}
+
+/*a {display: none}*/
+
+ /*=== SIGN IN ===*/
+.container {
+    /* === Container of the form === */
+    margin-left: 12.5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 5rem;
+}
+
+.container form {
+    /* === The form === */
+    box-sizing: border-box;
+    width: 720px;
+    /*min-height: 1000px;*/
+    padding: 0.5rem 2.5rem;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 0px 9px 26px rgba(20, 121, 255, 0.25);
+}
+
+.header {
+    /* === Sign In Label === */
+    font-size: var(--title-font-size);
+    color: var(--dark-blue);
+    font-weight: 800;
+        /*margin-bottom: 3rem;*/
+}
+
+.subtitle {
+    font-size: var(--subtitle-font-size);
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+
+form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 0 9px 0;
+}
+
+.textfield {
+    /* === All contents of the textfield (input and label) === */
+    position: relative;
+    height: 3rem;
+    min-width: calc(100% / 2 - 30px);
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.prompt {
+    /* === Prompt === */
+    position: absolute;
+    top: -1rem;
+    left: .5rem;
+    padding: 0 5px 0;
+    border-radius: 2rem;
+    color: var(--dark-blue);
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+}
+
+.errorlist {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    color: indianred;
+}
+
+a {
+    font-size: var(--sentence-font-size);
+    color: var(--light-blue);
+    text-decoration: none;
+}
+
+#picture_file-clear_id {
+    height: 1rem;
+    width: 1rem;
+}
+
+#id_picture_file {
+    border-color: transparent;
+}
+
+.field {
+    font-size: var(--sentence-font-size);
+    height: 2rem;
+}
+
+.field input[type=ImageField] {
+    background-color: orange;
+}
+
+.textfield select {
+    width: 107%;
+    height: 116%;
+    padding-left: 1rem;
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    border: 1px solid var(--light-grey);
+    border-radius: 0.75rem;
+    outline: none;
+    background: none;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.textfield input {
+    /* === Input tags of the text fields === */
+    width: 95%;
+    height: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    border: 1px solid var(--light-grey);
+    border-radius: 0.75rem;
+    outline: none;
+    background: none;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.textfield input[type=date] {
+    width: 95%;
+    height: 109%;
+}
+
+.save_button {
+    /* === Sign in Button === */
+    position: relative;
+    /*position: absolute;*/
+    /*top: 1000px;*/
+
+    height: 2rem;
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    /*margin-left: auto;*/
+    padding: 0 2rem;
+    outline: none;
+    border: none;
+    background-color: var(--light-blue);
+    color: white;
+    font-family: var(--main-font);
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    border-radius: .75rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.save_button:hover {
+    /* === Animation for Button === */
+    opacity: 75%;
+    box-shadow: 0px 15px 24px rgba(20, 121, 255, 0.25);
+
+}
+
+.textfield input:hover {
+    border: 1px solid var(--light-blue);
+    transition: all 0.3s ease;
+}
+
+.textfield select:hover {
+    border: 1px solid var(--light-blue);
+    transition: all 0.3s ease;
+}
+
+.textfield input:focus{
+    /* === Animation for text fields === */
+    border: 1px solid var(--dark-blue);
+    transition: all 0.3s ease;
+}
+
+.textfield select:focus{
+    /* === Animation for text fields === */
+    border: 1px solid var(--dark-blue);
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 584px) {
+    .container {
+        max-width: 100%;
+        max-height: 100vh;
+    }
+    .textfield {
+        width: 100%;
+    }
+}

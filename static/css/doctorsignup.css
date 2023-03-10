@@ -1,0 +1,358 @@
+/* === CSS VARIABLES === */
+:root {
+    /* === Colors === */
+    --dark-blue: #193B68;
+    --light-blue: #1479FF;
+    --light-grey: #E5E5E5;
+
+    /* === Fonts === */
+    --main-font: Mont;
+    --title-font-size: 44px;
+    --subtitle-font-size: 30px;
+    --sentence-font-size: 12px;
+}
+
+body {
+    height: 100vh;
+    font-family: var(--main-font);
+}
+
+ /*=== SIGN IN ===*/
+.container {
+    /* === Container of the form === */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 9rem;
+}
+
+.container form {
+    /* === The form === */
+    box-sizing: border-box;
+    width: 720px;
+    min-height: 1000px;
+    padding: 0.5rem 2.5rem;
+    border-radius: 2rem;
+    box-shadow: 0px 9px 26px rgba(20, 121, 255, 0.25);
+}
+
+.title {
+    /* === Sign In Label === */
+    font-size: var(--title-font-size);
+    color: var(--dark-blue);
+    font-weight: 800;
+        /*margin-bottom: 3rem;*/
+}
+
+.subtitle {
+    font-size: var(--subtitle-font-size);
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+
+form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 0 9px 0;
+}
+
+.textfield {
+    /* === All contents of the textfield (input and label) === */
+    position: relative;
+    height: 1.75rem;
+    min-width: calc(100% / 2 - 30px);
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.textfield select {
+    width: 107%;
+    height: 116%;
+    padding-left: 1rem;
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    border: 1px solid var(--light-grey);
+    border-radius: 0.75rem;
+    outline: none;
+    background: none;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.textfield input {
+    /* === Input tags of the text fields === */
+    width: 95%;
+    height: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    border: 1px solid var(--light-grey);
+    border-radius: 0.75rem;
+    outline: none;
+    background: none;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.textfield input[type=date] {
+    width: 95%;
+    height: 109%;
+}
+
+.prompt {
+    /* === Username and Password Prompt === */
+    position: absolute;
+    top: 0.5rem;
+    left: .75rem;
+    padding: 0 5px 0;
+    background-color: white;
+    border-radius: 2rem;
+    color: var(--light-grey);
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    transition: 0.3s;
+
+}
+
+.errorlist {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    color: indianred;
+}
+
+.button {
+    /* === Sign in Button === */
+    position: relative;
+    /*position: absolute;*/
+    /*top: 1000px;*/
+
+    height: 2rem;
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    /*margin-left: auto;*/
+    padding: 0 2rem;
+    outline: none;
+    border: none;
+    background-color: var(--light-blue);
+    color: white;
+    font-family: var(--main-font);
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    border-radius: .75rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.button:hover {
+    /* === Animation for Button === */
+    opacity: 75%;
+    box-shadow: 0px 15px 24px rgba(20, 121, 255, 0.25);
+
+}
+
+.textfield input:focus + .prompt {
+    /* === Event of the prompt texts when text fields are focused === */
+    top: -.5rem;
+    left: .8rem;
+    color: var(--dark-blue);
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    z-index: 2;
+}
+
+.textfield select:focus + .prompt {
+    /* === Event of the prompt texts when text fields are focused === */
+    top: -.5rem;
+    left: .8rem;
+    color: var(--dark-blue);
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    z-index: 2;
+}
+
+/*.textfield input:not(:placeholder-shown).field:not(:focus)+.prompt {*/
+/*    !* === Prompt texts remains at the top === *!*/
+/*    top: -.5rem;*/
+/*    left: .8rem;*/
+/*    font-size: var(--sentence-font-size);*/
+/*    font-weight: 600;*/
+/*    z-index: 2;*/
+/*}*/
+
+.textfield input:not([value=""]):valid +.prompt {
+    /* === Prompt texts remains at the top === */
+    top: -.5rem;
+    left: .8rem;
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    z-index: 2;
+}
+
+.textfield select:not([value=""]):valid +.prompt {
+    /* === Event of the prompt texts when text fields are focused === */
+    top: -.5rem;
+    left: .8rem;
+    font-size: var(--sentence-font-size);
+    font-weight: 600;
+    z-index: 2;
+}
+
+.textfield input:hover {
+    border: 1px solid var(--light-blue);
+    transition: all 0.3s ease;
+}
+
+.textfield select:hover {
+    border: 1px solid var(--light-blue);
+    transition: all 0.3s ease;
+}
+
+.textfield input:focus{
+    /* === Animation for text fields === */
+    border: 1px solid var(--dark-blue);
+    transition: all 0.3s ease;
+}
+
+.textfield select:focus{
+    /* === Animation for text fields === */
+    border: 1px solid var(--dark-blue);
+    transition: all 0.3s ease;
+}
+
+.text {
+    /* === Don't have an account yet === */
+    position: relative;
+    /*top: 92%;*/
+    /*top: 4.50rem;*/
+    font-weight: 600;
+    font-size: 10px;
+    color: var(--dark-blue);
+}
+
+.link {
+    /* === Sign up hyperlink === */
+    position: relative;
+    /*top: 92.6%;*/
+    /*top: 2.85rem;*/
+    top: -1.78rem;
+
+    margin-left: 8.70rem;
+    font-family: var(--main-font);
+    font-weight: 600;
+    font-size: 10px;
+    color: var(--light-blue);
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 584px) {
+    .container {
+        max-width: 100%;
+        max-height: 100vh;
+    }
+    /*.user-details {*/
+    /*    overflow-y: ;*/
+    /*}*/
+    .textfield {
+        width: 100%;
+    }
+}
+
+/*!* === POPUP === *!*/
+/*.popup {*/
+/*    width: 100%;*/
+/*    height: 1000px;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    background-color: rgba(0, 0, 0, 0.7);*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    z-index: 11;*/
+/*    display: none;*/
+/*}*/
+
+/*.popupContent {*/
+/*    position: fixed;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    width: 500px;*/
+/*    height: 300px;*/
+/*    top: 30%;*/
+/*    background-color: white;*/
+/*    border-radius: 2rem;*/
+/*    box-shadow: 0px 9px 26px rgba(0,0,0,.25);*/
+/*    text-align: center;*/
+/*}*/
+
+/*.image {*/
+/*    position: relative;*/
+/*    object-fit: contain;*/
+/*    width: 100%;*/
+/*    height: 100px;*/
+/*}*/
+
+/*.popupText {*/
+/*    position: relative;*/
+/*    font-weight: 800;*/
+/*    font-size: var(--subtitle-font-size);*/
+/*    color: var(--dark-blue);*/
+
+/*}*/
+
+/*.popupButton {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+
+/*.pButton {*/
+/*    margin: 20px 30px 0 30px;*/
+/*    padding: 10px 0 10px 0;*/
+/*    min-width: 150px;*/
+/*    min-height: 20px;*/
+/*}*/
+
+/*#pButton1 {*/
+/*    position: relative;*/
+/*    outline: none;*/
+/*    border: none;*/
+/*    background-color: var(--light-blue);*/
+/*    color: white;*/
+/*    font-size: var(--sentence-font-size);*/
+/*    font-weight: 600;*/
+/*    border-radius: .75rem;*/
+/*    cursor: pointer;*/
+/*    transition: .3s;*/
+/*}*/
+
+/*#pButton2 {*/
+/*    position: relative;*/
+/*    outline: none;*/
+/*    border: none;*/
+/*    background-color: white;*/
+/*    color: var(--light-blue);*/
+/*    font-size: var(--sentence-font-size);*/
+/*    font-weight: 600;*/
+/*    border-radius: .75rem;*/
+/*    cursor: pointer;*/
+/*    transition: .3s;*/
+/*}*/
+
+/*#pButton1:hover {*/
+/*    opacity: 75%;*/
+/*    box-shadow: 0px 15px 24px rgba(20, 121, 255, 0.25);*/
+/*}*/
+
+/*#pButton2:hover {*/
+/*    opacity: 75%;*/
+/*    box-shadow: 0px 15px 24px rgba(20, 121, 255, 0.25);*/
+/*}*/
