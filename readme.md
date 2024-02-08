@@ -1,5 +1,12 @@
 # Doc Kelan
 
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![PyCharm](https://img.shields.io/badge/PyCharm-000000.svg?&style=for-the-badge&logo=PyCharm&logoColor=white)
+
 Doc Kelan is an online doctor appointment web application. It is a platform where people can look up and schedule appointments with a doctor that fits their needs. Doc Kelan also serves as a tool for doctors to widen the reach of their medical services and organize appointments. An adminstrator also exists in this system as a custodian of the whole doctor appointment web application with access to pertinent patient and doctor information.
 
 During these times of the COVID-19 pandemic, Doc Kelan would prove beneficial as a self-contained software product to aid in the accessibility of medical care and mitigating the risk of people transmitting the virus.
